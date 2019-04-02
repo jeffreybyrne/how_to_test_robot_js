@@ -59,12 +59,15 @@ test('test_prioritize_tasks_with_todos_returns_max_todo_value', () => {
   expect(result).toEqual(42);
 });
 
-test.skip('test_workday_on_day_off_returns_false', () => {
+test('test_workday_on_day_off_returns_false', () => {
   // arrange
-
+  testRobot = newRobot(false,false,false);
   // act
-
+  testRobot.dayOff = 'Tuesday';
+  today = 'Tuesday';
+  result = isWorkDay(testRobot, today);
   // assert
+  expect(result).toEqual(false);
 });
 
 test.skip('test_workday_not_day_off_returns_true', () => {
