@@ -28,12 +28,13 @@ test('test_that_standard_robot_needing_repairs_sent_to_station_3', () => {
   expect(result).toEqual(3);
 });
 
-test.skip('test_that_robot_in_good_condition_sent_to_station_4', () => {
+test('test_that_robot_in_good_condition_sent_to_station_4', () => {
   // arrange
-
+  testRobot = newRobot(false,false,false);
   // act
-
+  result = station(testRobot);
   // assert
+  expect(result).toEqual(4);
 });
 
 test.skip('test_prioritize_tasks_with_empty_todo_list_returns_negative_one', () => {
