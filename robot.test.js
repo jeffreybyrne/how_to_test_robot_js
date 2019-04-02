@@ -46,12 +46,17 @@ test('test_prioritize_tasks_with_empty_todo_list_returns_negative_one', () => {
   expect(result).toEqual(-1);
 })
 
-test.skip('test_prioritize_tasks_with_todos_returns_max_todo_value', () => {
+test('test_prioritize_tasks_with_todos_returns_max_todo_value', () => {
   // arrange
-
+  testRobot = newRobot(false,false,false);
+  testRobot['todos'].push(1);
+  testRobot['todos'].push(42);
+  testRobot['todos'].push(4);
+  testRobot['todos'].push(17);
   // act
-
+  result = prioritizeTasks(testRobot);
   // assert
+  expect(result).toEqual(42);
 });
 
 test.skip('test_workday_on_day_off_returns_false', () => {
