@@ -70,10 +70,13 @@ test('test_workday_on_day_off_returns_false', () => {
   expect(result).toEqual(false);
 });
 
-test.skip('test_workday_not_day_off_returns_true', () => {
+test('test_workday_not_day_off_returns_true', () => {
   // arrange
-
+  testRobot = newRobot(false,false,false);
   // act
-
+  testRobot.dayOff = 'Wednesday';
+  today = 'Tuesday';
+  result = isWorkDay(testRobot, today);
   // assert
+  expect(result).toEqual(true);
 });
