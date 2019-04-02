@@ -10,12 +10,13 @@ test('test_that_foreign_robot_needing_repairs_sent_to_station_1', () => {
   expect(result).toEqual(1);
 });
 
-test.skip('test_that_vintage_robot_needing_repairs_sent_to_station_2', () => {
+test('test_that_vintage_robot_needing_repairs_sent_to_station_2', () => {
   // arrange
-
+  testRobot = newRobot(true,false,true);
   // act
-
+  result = station(testRobot);
   // assert
+  expect(result).toEqual(2);
 });
 
 test.skip('test_that_standard_robot_needing_repairs_sent_to_station_3', () => {
