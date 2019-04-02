@@ -19,12 +19,13 @@ test('test_that_vintage_robot_needing_repairs_sent_to_station_2', () => {
   expect(result).toEqual(2);
 });
 
-test.skip('test_that_standard_robot_needing_repairs_sent_to_station_3', () => {
+test('test_that_standard_robot_needing_repairs_sent_to_station_3', () => {
   // arrange
-
+  testRobot = newRobot(true,false,false);
   // act
-
+  result = station(testRobot);
   // assert
+  expect(result).toEqual(3);
 });
 
 test.skip('test_that_robot_in_good_condition_sent_to_station_4', () => {
